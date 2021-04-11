@@ -1,0 +1,25 @@
+{
+  "name": "10_team_profile_generator_ts",
+  "description": "Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomas-NW/10_Team_Profile_Generator_TS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomas-NW/10_Team_Profile_Generator_TS/issues"
+  },
+  "homepage": "https://github.com/Thomas-NW/10_Team_Profile_Generator_TS#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
