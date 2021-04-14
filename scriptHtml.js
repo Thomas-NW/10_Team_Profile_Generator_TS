@@ -1,0 +1,65 @@
+// const genHtml = require("./script")
+
+const htmlContent = `
+
+<!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- robots and noindex tells the browser that the page should not be found via search engines -->
+    <meta name="robots" content="noindex">
+  
+    <!--rel attribute defines the relationship that the linked resource has to the document from which it’s referenced. In most cases, this resource will simply be “stylesheet“, which means, not surprisingly, “the referenced document is a style sheet.” -->
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/stylesheet.css">
+    <!-- The <script> tag is used to embed a client-side script (JavaScript).; src URL Specifies the URL of an external script file-->
+    <!-- <script scr="main.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  
+  
+    <title>Team Profile Generator</title>
+  </head>
+  
+  <body>
+  
+  <header>
+    <h1>Team Profile Library</h1>
+  </header>
+  
+
+  
+  <p> TESTING </p>;
+
+  
+  
+    <main id="content">
+      <container class="controw">
+        <section class="colayout">
+          <div class="background">
+          <h1 class="headh1" >Name</h1>
+          </div>
+          <div >
+            <p class="par1">Role: </p>
+            <p class="par1">ID: </p>
+            <p class="par1">Email: </p>
+            <p class="par1">Others: </p>
+          </div>
+        </section>
+      </container>
+    </main>
+  
+  
+  <script src="script.js"></script>
+  
+  </body>
+  
+  </html>
+
+`
+  module.exports = htmlContent

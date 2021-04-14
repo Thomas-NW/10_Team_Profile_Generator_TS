@@ -1,12 +1,12 @@
 const genHtml = team => {
-    var result = "";
-    var team = [];
-    var cards = [];
+  var result = "";
+  var team = [];
+  var cards = [];
 
-    for (let i = 0; i < team.length; i++) {
+  for (let i = 0; i < team.length; i++) {
 
-       if (team[i].getRole() === "manager") {
-          cards.push(`  
+    if (team[i].getRole() === "manager") {
+      cards.push(`  
           <container class="controw">
           <section class="colayout">
             <div class="background">
@@ -22,9 +22,9 @@ const genHtml = team => {
         </container>
       `
       )
-      }
-        else if (team[i].getRole() === "egnineer") {
-          cards.push(`
+    }
+    else if (team[i].getRole() === "egnineer") {
+      cards.push(`
           <container class="controw">
           <section class="colayout">
             <div class="background">
@@ -39,11 +39,11 @@ const genHtml = team => {
           </section>
         </container>
         `
-          )
-      }
+      )
+    }
 
-        else if (element.getRole() === "intern") {
-          cards.push(`
+    else if (element.getRole() === "intern") {
+      cards.push(`
           <container class="controw">
           <section class="colayout">
             <div class="background">
@@ -58,10 +58,10 @@ const genHtml = team => {
           </section>
         </container>
       `
-          )
-        }
+      )
     }
-   }
+  }
+// }
 
 
 var html = `
@@ -101,6 +101,6 @@ ${cards}
 
 `
 
-
+}
 
 module.exports = html

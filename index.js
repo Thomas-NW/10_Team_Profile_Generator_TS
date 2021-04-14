@@ -1,9 +1,11 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
+const http = require('http');
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 const genHtml = require("./script.js");
+const htmlContent = require("./scriptHtml.js");
 
 const util = require('util');
 const path = require('path');  // I could not figure out how to generate a path for saving the README file. I hard coded the location, but would have prefered a promt to ask the user to select a storage location. Any help you can provide is appreciated....
@@ -12,36 +14,17 @@ const path = require('path');  // I could not figure out how to generate a path 
 //                                                         // https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original : 
 //                                                         // Takes a function following the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises.
 
-// I applied the JavaScript try/catch/finally Statement, since it was simple and does the job. What other option could I have applied?
-// try {
-//     fs.mkdir(dirname.async, (err) => {
-//         if (err) {
-//             // console.log("Error handled by catch method: " + err.message);
-
-//         } else {
-//             console.log(`${dirname.async} created!`);
-//         }
-//     })
-
-// } catch (err) {
-//     console.log(err.message);
-
-// } finally {
-//     console.log('Directory generated');
-
-//     const dirpath = __dirname;
-//     console.log(dirpath);
-
-//     const writeFileAsync = util.promisify(fs.writeFile);    // util.promisify(fs.writeFile): error handling if README.md already exists. 
-// // https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original : 
-// // Takes a function following the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises.
-
 const writeFile = function() {
     fs.writeFileSync("./dist/index.html",genHtml(team))
 }
 
+fs.writeFileSync("./dist/index2.html",htmlContent, err => {
+    if (err) {
+        console.error(err)
+        return
+      }
+})
 
-// Employee Card 
 
 let team = [];
 
@@ -163,27 +146,4 @@ const init = () => {
 };
 
 init();
-
-
-
-// const init = answers => {
-
-//     var indexHtml = creatCard(employee);
-//     fs.writeFile('employee.html', indexHtml, function(err) {
-
-//     });
-
-// };
-
-
-        // )
-        // // .then(edata) => {
-        // //     let employee = new Employee(edata.name, edata.id, edata.email, edata.role);
-
-        // //     var employeeHtml = createCard(employee);
-        // //     fs.writeFileAsync(`lib/employee.html`, employeeHtml, function(err) {
-
-        // //     })
-
-        //     let employee = new Employee(edata.name, edata.id, edata.email, edata.role); 
 

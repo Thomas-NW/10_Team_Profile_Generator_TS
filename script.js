@@ -1,81 +1,81 @@
 const genHtml = team => {
-    var result = "";
+  var result = "";
 
-    for (let i = 0; i < team.length; i++) {
-        const element = team[i];
-        console.log("element", element);
-        if (element.getRole() === "manager") {
-            result += genManager(element)
-        }
+  for (let i = 0; i < team.length; i++) {
+    const element = team[i];
 
-        if (element.getRole() === "engineer") {
-            result += genEngineer(element)
-        }
+    console.log("element", element);
 
-        if (element.getRole() === "intern") {
-            result += genIntern(element)
-        }
+    if (element.getRole() === "manager") {
+      result += genManager(element)
     }
-    return result;
+
+    if (element.getRole() === "engineer") {
+      result += genEngineer(element)
+    }
+
+    if (element.getRole() === "intern") {
+      result += genIntern(element)
+    }
+  }
+  return result;
 }
+
 
 
 const genManager = manager => {
 
-    return `  
-    <container class="controw">
-    <section class="colayout">
-      <div class="background">
-      <h1 class="headh1" >Name ${manager.name}</h1>
+  return `  
+    <div class="card border border-primary" style="width: 18rem; display: inline-block">
+      <div class="card-header bg-primary ">
+        <h1 class="text-center text-dark text-uppercase">${manager.name}</h1>
+      </div>   
+      <div class="bg-light">   
+        <p class="text-dark"><i class="fas fa-crosshairs"" style="margin-right: 0.5vw;"></i>Manager</p>
+        <p class="text-dark">Role: IN TESTING</p>
+        <p class="text-dark">ID: ${manager.id}</p>
+        <p class="text-dark">Email: <a href="mailto:${manager.email}">${manager.email}</p>
+        <p class="text-dark">Phone: ${manager.officeNumber}</p>
       </div>
-      <div >
-        <p class="par1">Role: ${manager.role}</p>
-        <p class="par1">ID: ${manager.id}</p>
-        <p class="par1">Email: ${manager.email}</p>
-        <p class="par1">Office Phone: ${manager.officeNumber}</p>
-      </div>
-    </section>
-  </container>
-`
+    </div>
+  `
 }
 
 const genEngineer = engineer => {
 
-    return ` 
-    <container class="controw">
-    <section class="colayout">
-      <div class="background">
-      <h1 class="headh1" >Name ${engineer.name}</h1>
-      </div>
-      <div >
-        <p class="par1">Role: ${engineer.role}</p>
-        <p class="par1">ID: ${engineer.id}</p>
-        <p class="par1">Email: ${engineer.email}</p>
-        <p class="par1">gitHub: ${engineer.github}</p>
-      </div>
-    </section>
-  </container>
- `
+    return `
+    <div class="card border border-primary" style="width: 18rem; display: inline-block">
+    <div class="card-header text-dark bg-primary ">
+      <h1 class="text-center text-uppercase">${engineer.name}</h1>
+    </div>   
+    <div class="bg-light">   
+      <p class="text-dark"><i class="fab fa-wpbeginner" style="margin-right: 0.5vw;"></i>Egnineer</p>
+      <p class="text-dark">Role: IN TESTING</p>
+      <p class="text-dark">ID: ${engineer.id}</p>
+      <p class="text-dark">Email: <a href="mailto:${engineer.email}">${engineer.email}</p>
+      <p class="text-dark">gitHub: ${engineer.github}</p>
+    </div>
+  </div>
+  `
 }
 const genIntern = intern => {
 
     return `
-    <container class="controw">
-    <section class="colayout">
-      <div class="background">
-      <h1 class="headh1" >Name ${intern.name}</h1>
-      </div>
-      <div >
-        <p class="par1">Role: ${intern.role}</p>
-        <p class="par1">ID: ${intern.id}</p>
-        <p class="par1">Email: ${intern.email}</p>
-        <p class="par1">School: ${intern.school}</p>
-      </div>
-    </section>
-  </container>
-`
+    <div class="card border border-primary" style="width: 18rem; display: inline-block">
+    <div class="card-header bg-primary ">
+      <h1 class="text-center text-dark text-uppercase">${intern.name}</h1>
+    </div>   
+    <div class="bg-light">   
+      <p class="text-dark"><i class="fas fa-american-sign-language-interpreting" style="margin-right: 0.5vw;"></i>Intern</p>
+      <p class="text-dark">Role: IN TESTING</p>
+      <p class="text-dark">ID: ${intern.id}</p>
+      <p class="text-dark">Email: <a href="mailto:${intern.email}">${intern.email}</p>
+      <p class="text-dark">School: ${intern.school}</p>
+    </div>
+  </div>
+
+  `
 }
 
-
-
 module.exports = genHtml
+
