@@ -18,12 +18,12 @@ const writeFile = function() {
     fs.writeFileSync("./dist/index.html",genHtml(team))
 }
 
-fs.writeFileSync("./dist/index2.html",htmlContent, err => {
-    if (err) {
-        console.error(err)
-        return
-      }
-})
+// fs.writeFileSync("./dist/index2.html",htmlContent, err => {
+//     if (err) {
+//         console.error(err)
+//         return
+//       }
+// })
 
 
 let team = [];
