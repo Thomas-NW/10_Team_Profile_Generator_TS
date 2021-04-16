@@ -3,7 +3,7 @@ const fs = require('fs');
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
-const genHtml = require("./script.js");
+const genHtml = require("./src/script.js");
 
 // const http = require('http');
 // const htmlContent = require("./scriptHtml.js");
