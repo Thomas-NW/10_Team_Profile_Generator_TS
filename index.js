@@ -1,29 +1,36 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
-const http = require('http');
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 const genHtml = require("./script.js");
-const htmlContent = require("./scriptHtml.js");
 
-const util = require('util');
-const path = require('path');  // I could not figure out how to generate a path for saving the README file. I hard coded the location, but would have prefered a promt to ask the user to select a storage location. Any help you can provide is appreciated....
-
-// const writeFileAsync = util.promisify(fs.writeFile);    // util.promisify(fs.writeFile): error handling if README.md already exists. 
-//                                                         // https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original : 
-//                                                         // Takes a function following the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises.
+// const http = require('http');
+// const htmlContent = require("./scriptHtml.js");
+// const util = require('util');
+// const path = require('path');  // I could not figure out how to generate a path for saving the README file. I hard coded the location, but would have prefered a promt to ask the user to select a storage location. Any help you can provide is appreciated....
 
 const writeFile = function() {
     fs.writeFileSync("./dist/index.html",genHtml(team))
 }
 
-// fs.writeFileSync("./dist/index2.html",htmlContent, err => {
-//     if (err) {
-//         console.error(err)
-//         return
-//       }
-// })
+//A function that will validate prompts needing a string
+const validateString = string => {
+    return string !== '' || 'Please enter your name';
+};
+
+//A function that will validate if a number is entered in prompts needing a number
+const validateNumber = number => {
+    const reg = /^\d+$/;
+    return reg.test(number) || "Please enter a number.";
+};
+
+//A function that will validate if an proper email is entered when prompted.
+const validateEmail = email => {
+    const reg = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/;
+    return reg.test(email) || "Please enter a valid email.";
+};
+
 
 
 let team = [];
@@ -40,6 +47,7 @@ const promptUser = () => {
             type: 'input',
             name: 'name',
             message: "Enter Name",
+            validate: validateString,
         },
         {
             type: 'input',
@@ -50,8 +58,8 @@ const promptUser = () => {
             type: 'input',
             name: 'email',
             message: "Enter Email address",
+            validate: validateEmail,
         },
-
     ]);
 
 };
@@ -67,6 +75,7 @@ const init = () => {
                         type: 'input',
                         name: 'officeNumber',
                         message: "Enter your office number",
+                        validate: validateNumber,
                     },
                     {
                         type: 'confirm',
