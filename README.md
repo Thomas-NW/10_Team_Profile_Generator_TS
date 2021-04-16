@@ -30,6 +30,7 @@ N/A
 
 ## Usage
 💻 ![Team_Generator_Image](./assets/image/Team_Generator_Image.PNG])
+The index.html file is saved to the dist folder. 
 
 
 ## Contributing
