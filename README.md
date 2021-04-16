@@ -52,6 +52,9 @@ HTML 5.0, JavaScript, jQuery, json, Bootstrap
 https://github.com/Thomas-NW/10_Team_Profile_Generator_TS.git
 
 
+## Recognitions
+Thank you to my tutor Philip Cowan; who was a great support.
+
 Thank you for visiting and reviewing the project. 
 ---
 
