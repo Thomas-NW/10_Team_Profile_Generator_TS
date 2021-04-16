@@ -44,8 +44,8 @@ const genHtml = team => {
     <title>Team Profile Generator</title>
   </head>
   <body>
-    <header class="sticky-top bg-primary py-3 text-center m-3">
-      <h1 class='text-light'>Team Library</h1>
+    <header class="sticky-top bg-info py-3 text-center m-3">
+      <h1 class='text-dark'>Team Library</h1>
     </header>
     <main class="m-3">
   
